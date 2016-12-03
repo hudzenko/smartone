@@ -15,8 +15,12 @@
         }
     }
 
+    $json = array();
+
     if (empty($login) or empty($password)) {
-        exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
+        $json['error'] = 'Ви заповнили не всі поля, обманути вирішили? =)';
+        echo json_encode($json);
+        die();
     }
 
     $login = stripslashes($login);
@@ -31,9 +35,9 @@
 
     $user_row = mysql_fetch_array($result);
     if (empty($user_row['password'])) {
-
-        exit ("Извините, введённый вами login или пароль неверный.");
-
+        $json['error'] = 'Извините, введённый вами login или пароль неверный.';
+        echo json_encode($json);
+        die();
     } else {
 
         if ($user_row['password'] == $password) {
@@ -43,10 +47,13 @@
 
             $_SESSION['id'] = $user_row['id'];
             //эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
-            header('Location: /');   
+            $json['error'] = 0; // oшибoк нe былo
+
+            echo json_encode($json); // вывoдим мaссив oтвeтa
         } else {
-            //если пароли не сошлись
-            exit ("Извините, введённый вами login или пароль неверный.");
+            $json['error'] = 'Извините, введённый вами login или пароль неверный.';
+            echo json_encode($json);
+            die();
         }
     }
 

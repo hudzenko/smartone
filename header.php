@@ -6,8 +6,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <title>Smartone</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +26,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 			<?php if (empty($_SESSION['login']) or empty($_SESSION['id'])): ?>
-				<form class="navbar-form navbar-right" role="form" action="login.php" method="post">
+				<form class="navbar-form navbar-right login__form" role="form">
 					<div class="form-group">
 					  <input required name="login" type="text" size="15" maxlength="15" type="text" placeholder="Ваш логин" class="form-control">
 					</div>
