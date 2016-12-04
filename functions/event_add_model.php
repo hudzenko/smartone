@@ -56,9 +56,8 @@
 
     $user_id = $_SESSION['id'];
 
-    // если такого нет, то сохраняем данные
-    $new_user = mysql_query("INSERT INTO event (type,date,name,description,user_id) VALUES('$type','$date','$name','$description','$user_id')");
-    if ($new_user == 'TRUE')
+    $new_event = mysql_query("INSERT INTO event (type,date,name,description,user_id) VALUES('$type','$date','$name','$description','$user_id')");
+    if ($new_event == 'TRUE')
     {
         $json['error'] = 0;
 

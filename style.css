@@ -111,3 +111,79 @@
     background-color: #f5f5f5;
     border-right: 1px solid #eee;
 }
+
+/* register */
+
+/* events */
+
+.events__header{
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.events__add-btn-wrap{
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.event-item__buttons{
+  -ms-align-items: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* events */
+
+/* events-edit */
+.events-edit__header{
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.events-edit__back-btn-wrap{
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* events-edit */
+
+
+/* contacts */
+
+.contacts__header{
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contacts__add-btn-wrap{
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.contacts-item__buttons{
+  -ms-align-items: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* contacts */
+
+/* one-contact */
+
+.one-contact__header{
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.one-contact__back-btn-wrap{
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.one-contact__edit-btn{
+  margin-right: 20px;
+}
+
+/* one-contact */
+
