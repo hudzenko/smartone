@@ -211,6 +211,60 @@
 			}          
 		});
     });
+
+
+    // Додавання організації
+    $('.company-add__form').on('submit',function(event){
+    	event.preventDefault();
+        var data = $(this).serialize(); 
+		$.ajax({ 
+			type: 'POST', 
+			url: '/functions/company_add_model.php', 
+			dataType: 'json',
+			data: data,
+			beforeSend: function(){
+				alert(this.data);
+			},
+			success: function(data){
+				if(data['error']){
+					alert(data['error']);
+				} else{
+					alert('Організацію додано');
+					location = '/companies.php';
+				}
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+		    	alert(xhr.status);
+		    	alert(thrownError);
+			}          
+		});
+    });
+
+
+    // Видалення організації
+    $('.companies-item__delete').on('click',function(event){
+    	event.preventDefault();
+    	var item = this;
+		$.ajax({ 
+			type: 'POST', 
+			url: '/functions/company_delete.php', 
+			dataType: 'json',
+			data: { itemId: $(item).data('id')},
+			success: function(data){
+				if(data['error']){
+					alert(data['error']);
+				} else{
+					$(item).parents('.list-group-item').remove();
+				}
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+		    	alert(xhr.status);
+		    	alert(thrownError);
+			}          
+		});
+    });
+
+    
     
 
 });

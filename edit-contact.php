@@ -46,9 +46,9 @@
               <label for="company">Організація</label>
               <?php include ("functions/get_all_companies.php"); ?>
               <select class="form-control" id="company" name="company">
-              <option value="0">Не обрано. <?php if(!mysql_fetch_assoc($companiesQuery)){ echo 'Немає доступних організацій.'; } ?></option>
+              <option value="0">Не обрано</option>
               <?php
-                while ($row = mysql_fetch_assoc($companiesQuery)) {
+                while ($row = mysql_fetch_assoc($result)) {
               ?>
                 <?php if($row["id"] == $item_row['type']): ?>
                   <option selected value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>
@@ -56,7 +56,7 @@
                   <option value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>
                 <?php endif; ?>
               <?php } 
-                mysql_free_result($companiesQuery);?>
+                mysql_free_result($result);?>
               </select>
             </div>
             <div class="form-group">

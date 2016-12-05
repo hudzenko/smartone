@@ -1,4 +1,4 @@
 <?
 	include ("functions/bd.php");
 	$user_id = $_SESSION['id'];
-    $companiesQuery = mysql_query("SELECT id,name FROM company where user_id='$user_id'", $db);
+    $result = mysql_query("SELECT id,name,address FROM company where user_id='$user_id'", $db);

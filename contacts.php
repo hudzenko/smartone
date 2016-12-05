@@ -19,8 +19,8 @@
           </div>
           <div class="list-group"> 
             <?php
-              include ("functions/bd.php");
-              $result = mysql_query("SELECT id,fullname,telephone FROM contacts", $db);
+              
+              include ("functions/get_all_contacts.php");
               while ($row = mysql_fetch_assoc($result)) {
             ?>
               <div class="list-group-item">

@@ -187,3 +187,13 @@
 
 /* one-contact */
 
+
+/* companies */
+
+.companies-item__buttons{
+  -ms-align-items: center;
+  align-items: center;
+  height: 100%;
+}
+/* companies */
+

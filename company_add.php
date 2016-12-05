@@ -11,37 +11,32 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h2 class="sub-header">Новий контакт</h2>
-          <form class="contact-add__form">
+          <h2 class="sub-header">Нова організація</h2>
+          <form class="company-add__form">
             <div class="form-group">
-              <label for="fullname">Ім’я</label>
-              <input required type="text" class="form-control" id="fullname" name="fullname" placeholder="Ім’я контакту">
+              <label for="name">Назва</label>
+              <input required type="text" class="form-control" id="name" name="name" placeholder="Ім’я контакту">
             </div>
             <div class="form-group">
-              <label for="telephone">Телефон</label>
-              <input required type="text" class="form-control" id="telephone" name="telephone" placeholder="Телефон">
+              <label for="address">Адреса</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Адреса">
             </div>
             <div class="form-group">
-              <label for="datetimepicker-date">Дата народження</label>
-              <div class='input-group date' id='datetimepicker-date'>
-                    <input name="birthday" type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="company">Організація</label>
-              <?php include ("functions/get_all_companies.php"); ?>
-              <select class="form-control" id="company" name="company">
+              <label for="chief">Керівник</label>
+              <?php include ("functions/get_all_contacts.php"); ?>
+              <select class="form-control" id="chief" name="chief">
               <option value="0">Не обрано</option>
               <?php
                 while ($row = mysql_fetch_assoc($result)) {
               ?>
-                <option value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>
+                <option value="<?php echo $row["id"] ?>"><?php echo $row["fullname"] ?></option>
               <?php } 
                 mysql_free_result($result);?>
               </select>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Телефон</label>
+              <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Телефон">
             </div>
             <div class="form-group">
               <label for="email">E-mail</label>
