@@ -22,12 +22,17 @@
 .header{
   height: 50px;
   margin-bottom: 0;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0,0,0,.9);
   transition: .2s;
 }
-.header:hover{
-  background-color: rgba(0,0,0,1);
+.header_acc-link{
+  text-decoration: underline;
+  color: #fefefe;
 }
+.header_acc-link:hover{
+  color: #f0f0f0;
+}
+
 .navbar-brand.header__logo{
   font-size: 20px;
   color: #fff;
@@ -130,9 +135,80 @@
   -ms-align-items: center;
   align-items: center;
   height: 100%;
+  justify-content: flex-end;
+}
+.events-item__edit-btn{
+  margin-right: 10px;
+  background: #1565c0;
+}
+.event-time{
+  text-align: center;
+  font-weight: 600;
+  height: 100%;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.event-time__date{
+  margin-right: 10px;
+}
+.events__item{
+  position: relative;
+  margin-bottom: 16px;
+  padding-top: 30px;
+  transition: .2s;
+}
+.events__item:last-child{
+  margin-bottom: 0;
+}
+.events__item-type{
+  position: absolute;
+  top: -4px;
+  left: 4px;
+  color: #fff;
+  padding: 2px 5px;
+}
+.event-item__delete{
+  background: #e53935;
+}
+.events-filter{
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.events__item[data-type='1'] .events__item-type{
+  background-color: rgb(55, 179, 179);
+}
+.events__item[data-type='2'] .events__item-type{
+  background-color: rgb(107, 83, 41);
+}
+.events__item[data-type='3'] .events__item-type{
+  background-color: #257726;
+}
+.events__item[data-type='4'] .events__item-type{
+  background-color: rgb(226, 99, 13);
 }
 
 /* events */
+
+/*filters*/
+.events-filter{
+  justify-content: flex-start;
+}
+.filter-item{
+  width: 300px;
+  margin-right: 20px;
+}
+.event_type--hidden{
+  display: none;
+}
+.event_date--hidden{
+  display: none;
+}
+/*filters*/
+
 
 /* events-edit */
 .events-edit__header{
@@ -196,4 +272,23 @@
   height: 100%;
 }
 /* companies */
+
+
+/* one-company */
+.one-company__header{
+  -ms-align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.one-company__back-btn-wrap{
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+}
+.one-company__edit-btn{
+  margin-right: 20px;
+}
+
+/* one-company */
+
 

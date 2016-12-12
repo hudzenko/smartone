@@ -16,6 +16,7 @@
     	format:'YYYY-MM-DD'
     });
     
+    
 
     // Логін
     $('.login__form').on('submit',function(event){
@@ -264,7 +265,60 @@
 		});
     });
 
-    
-    
+
+    // Зміна організації
+    $('.company-edit__form').on('submit',function(event){
+    	event.preventDefault();
+        var data = $(this).serialize();
+        var contId = $(this).find('.company-edit__id').val();
+		$.ajax({ 
+			type: 'POST', 
+			url: '/functions/company_edit_model.php', 
+			dataType: 'json',
+			data: data,
+			success: function(data){
+				if(data['error']){
+					alert(data['error']);
+				} else{
+					alert('Організацію змінено');
+					location = '/company.php?id=' + contId;
+				}
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+		    	alert(xhr.status);
+		    	alert(thrownError);
+			}          
+		});
+    });
+
+
+    function filter(){
+    	$('#filter__type').on('change',function(){
+    		var filter = $(this).val();
+    		if(filter == 0){
+    			$('.events__item').removeClass('event_type--hidden');
+    		} else{
+    			$('.events__item').addClass('event_type--hidden');
+    			$('.events__item[data-type='+filter+']').removeClass('event_type--hidden');
+    		}
+    	});
+    	console.log($('#datetimepicker-filter-input').val());
+
+    	$('#datetimepicker-filter').datetimepicker({
+	    	format:'YYYY-MM-DD'
+	    }).on('dp.change',function(event){
+
+		    var dateFilter = $('#datetimepicker-filter-input').val();
+
+    		if(!dateFilter){
+    			$('.events__item').removeClass('event_date--hidden');
+    		} else{
+    			$('.events__item').addClass('event_date--hidden');
+    			$('.events__item[data-date='+dateFilter+']').removeClass('event_date--hidden');
+    		}
+		  });
+    }
+
+    filter();
 
 });

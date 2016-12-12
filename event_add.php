@@ -24,10 +24,6 @@
               <?php
                 include ("functions/bd.php");
                 $result = mysql_query("SELECT * FROM event_type", $db);
-                // До тех пор, пока в результате содержатся ряды, помещаем их в ассоциативный массив.
-                // Замечание: если запрос возвращает только один ряд - нет нужды в цикле.
-                // Замечание: если вы добавите extract($row); в начало цикла, вы сделаете
-                //            доступными переменные $userid, $fullname и $userstatus
                 while ($row = mysql_fetch_assoc($result)) {
               ?>
                 <option value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>
@@ -39,7 +35,7 @@
             <div class="form-group">
               <label for="datetimepicker1">Дата і час</label>
               <div class='input-group date' id='datetimepicker1'>
-                    <input required name="date" type='text' class="form-control" />
+                    <input required name="date" placeholder="Дата події" type='text' class="form-control" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -49,7 +45,7 @@
               <label for="description">Опис події</label>
               <textarea class="form-control" id="description" name="description" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Додати подію</button>
           </form>
         </div>
       </div>

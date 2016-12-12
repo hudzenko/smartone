@@ -19,7 +19,6 @@
           </div>
           <div class="list-group"> 
             <?php
-              
               include ("functions/get_all_contacts.php");
               while ($row = mysql_fetch_assoc($result)) {
             ?>

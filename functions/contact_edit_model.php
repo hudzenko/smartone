@@ -70,7 +70,6 @@
     // подключаемся к базе
     include ("bd.php");
 
-    $edited_contact = mysql_query("UPDATE contacts SET type='$type',date='$date',name='$name',description='$description' WHERE id='$item_id'");
 
     if($company){
         $edited_contact = mysql_query("UPDATE contacts SET fullname='$fullname',birthday='$birthday',company='$company',telephone='$telephone',email='$email' WHERE id='$item_id'");

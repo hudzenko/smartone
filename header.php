@@ -38,7 +38,7 @@
 				</form>
 			<?php else: ?>
 				<div class="navbar-right header__logged fw">
-					<h2 class="header__greeting">Привіт, <?php echo $_SESSION['login']; ?></h2>
+					<h2 class="header__greeting">Привіт, <a class="header_acc-link" href="account.php"><?php echo $_SESSION['login']; ?></a></h2>
 					<a href="logout.php" class="btn btn-primary">Вийти</a>
 				</div> 
 			<?php endif; ?>

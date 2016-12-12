@@ -1,3 +1,4 @@
 <?php 
 	include ("functions/bd.php");
-	$result = mysql_query("SELECT id,fullname,telephone FROM contacts", $db);
+    $user_id = $_SESSION['id'];
+	$result = mysql_query("SELECT id,fullname,telephone FROM contacts where user_id='$user_id'", $db);
