@@ -25,15 +25,15 @@
             </div>
           </div>
           <?php include ("functions/get_current_contact.php"); ?>
-          <?php echo $item_row['fullname'] ?>
+          Назва: <?php echo $item_row['fullname'] ?>
           <br>
-          <?php echo $item_row['telephone'] ?>
+          Номер: <?php echo $item_row['telephone'] ?>
           <br>
-          <?php echo $item_row['email'] ?>
+          E-mail: <?php echo $item_row['email'] ?>
           <br>
-          <?php echo $item_row['birthday'] ?>
+          Дата народження: <?php echo $item_row['birthday'] ?>
           <br>
-          <?php echo $item_row['company'] ?>
+          Компанія <a href="company.php?id=<?php echo $item_row['company']; ?>"><?php echo $item_row['company_name'] ?></a>
           <br>
         </div>
       </div>

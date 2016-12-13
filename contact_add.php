@@ -24,7 +24,7 @@
             <div class="form-group">
               <label for="datetimepicker-date">Дата народження</label>
               <div class='input-group date' id='datetimepicker-date'>
-                    <input name="birthday" type='text' class="form-control" />
+                    <input name="birthday" type='text' class="form-control" placeholder="День народження" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -34,7 +34,7 @@
               <label for="company">Організація</label>
               <?php include ("functions/get_all_companies.php"); ?>
               <select class="form-control" id="company" name="company">
-              <option value="0">Не обрано</option>
+              <option value="0">Не обрано. <?php if(!mysql_num_rows($result)) { ?>Немає доступних орагізацій.<?php }?></option>
               <?php
                 while ($row = mysql_fetch_assoc($result)) {
               ?>
@@ -47,7 +47,7 @@
               <label for="email">E-mail</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Додати</button>
           </form>
         </div>
       </div>

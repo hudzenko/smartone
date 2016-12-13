@@ -25,15 +25,15 @@
             </div>
           </div>
           <?php include ("functions/get_current_company.php"); ?>
-          <?php echo $item_row['name'] ?>
+          Назва: <?php echo $item_row['name'] ?>
           <br>
-          <?php echo $item_row['address'] ?>
+          Адреса: <?php echo $item_row['address'] ?>
           <br>
-          <?php echo $item_row['chief'] ?>
+          Керівник: <a href="contact.php?id=<?php echo $item_row['chief'] ?>"><?php echo $item_row['chief_name'] ?></a>
           <br>
-          <?php echo $item_row['telephone'] ?>
+          Телефон: <?php echo $item_row['telephone'] ?>
           <br>
-          <?php echo $item_row['email'] ?>
+          E-mail: <?php echo $item_row['email'] ?>
           <br>
           <div class="one-company__members">
           <h2>Члени організації</h2>

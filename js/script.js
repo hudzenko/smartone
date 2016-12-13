@@ -223,9 +223,6 @@
 			url: '/functions/company_add_model.php', 
 			dataType: 'json',
 			data: data,
-			beforeSend: function(){
-				alert(this.data);
-			},
 			success: function(data){
 				if(data['error']){
 					alert(data['error']);
@@ -317,6 +314,22 @@
     			$('.events__item[data-date='+dateFilter+']').removeClass('event_date--hidden');
     		}
 		  });
+
+	    
+	    $('#filter__birthdays').on('change',function(){
+	    	if($(this).val() > 12){
+	    		$(this).val('12');
+	    	}
+    		var filter = $(this).val();
+    		if(!filter){
+    			$('.contacts-item').removeClass('contacts-item--hidden');
+    		} else{
+    			$('.contacts-item').addClass('contacts-item--hidden');
+    			$('.contacts-item[data-birthday='+filter+']').removeClass('contacts-item--hidden');
+    		}
+    	});
+
+	    
     }
 
     filter();

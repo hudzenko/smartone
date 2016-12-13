@@ -15,7 +15,7 @@
           <form class="company-add__form">
             <div class="form-group">
               <label for="name">Назва</label>
-              <input required type="text" class="form-control" id="name" name="name" placeholder="Ім’я контакту">
+              <input required type="text" class="form-control" id="name" name="name" placeholder="Назва організації">
             </div>
             <div class="form-group">
               <label for="address">Адреса</label>
@@ -42,7 +42,7 @@
               <label for="email">E-mail</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Додати</button>
           </form>
         </div>
       </div>

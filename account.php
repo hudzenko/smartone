@@ -12,6 +12,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Головна</h2>
+          <h3>Найближчі події</h3>
           <div class="list-group remind-list"> 
             <?php
               include ("functions/bd.php");
@@ -20,15 +21,28 @@
               
               $date_three_days = date('Y-m-d H:i:s', strtotime( "$date + 3 day" ));
               $date_five_minutes = date('Y-m-d H:i:s', strtotime( "$date + 5 minutes" ));
-              $result = mysql_query("SELECT event.name, event.description FROM event left join event_type on (event_type.id = event.type) where event.user_id = '$user_id' and event.date > '$date' and ((event_type.reminder_type = 1 and event.date < '$date_three_days') or (event_type.reminder_type = 2 and event.date < '$date_five_minutes') )", $db);
-
+              $result = mysql_query("SELECT e.name, e.type, e.description, e.date, et.name as type_name FROM event e left join event_type et on (et.id = e.type) where e.user_id = '$user_id' and e.date > '$date' and ((et.reminder_type = 1 and e.date < '$date_three_days') or (et.reminder_type = 2 and e.date < '$date_five_minutes') )", $db);
+               if(!mysql_num_rows($result)) { echo 'Найближчим часом подій немає, дякуємо що користуєтесь нашим сервісом. ;)'; }
               while ($row = mysql_fetch_assoc($result)) {
+              $item_date = new DateTime($row["date"]);
             ?>
-              <div class="list-group-item">
-                <div class="row">
-                  <div class="col-md-9">
+              <div class="list-group-item events__item" data-type="<?php echo $row["type"] ?>">
+              <div class="events__item-type"><?php echo $row["type_name"] ?></div>
+                <div class="row events__item-body fw">
+                  <div class="col-md-6 events__item-descr">
                     <h4 class="list-group-item-heading"><?php echo $row["name"] ?></h4>
                     <p class="list-group-item-text"><?php echo $row["description"] ?></p>
+
+                  </div>
+                  <div class="col-md-6">
+                    <div class="event__item-time event-time fw">
+                      <div class="event-time__date">
+                        <?php echo $item_date->format('Y-m-d'); ?>
+                      </div>
+                      <div class="event-time__time">
+                        <?php echo $item_date->format('H:i'); ?>
+                      </div>  
+                    </div>
                   </div>
                 </div> 
               </div>
