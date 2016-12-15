@@ -50,7 +50,7 @@
               <?php
                 while ($row = mysql_fetch_assoc($result)) {
               ?>
-                <?php if($row["id"] == $item_row['type']): ?>
+                <?php if($row["id"] == $item_row['company']): ?>
                   <option selected value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>
                 <?php else : ?>
                   <option value="<?php echo $row["id"] ?>"><?php echo $row["name"] ?></option>

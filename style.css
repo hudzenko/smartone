@@ -35,12 +35,13 @@ h1,h2{
   flex-wrap: wrap; 
 }
 .page{
-  height: 100vh;
   padding-top: 50px;
   background-color: #ddd;
   position: relative;
+  min-height: 100vh;
 }
 .page--full{
+  height: 100vh;
   padding-top: 0;
 }
 
@@ -377,6 +378,7 @@ h1,h2{
   padding: 20px;
   position: relative;
   padding-top: 26px;
+  margin-bottom: 24px;
 }
 .contacts-list__item:nth-child(3n){
   margin-right: 0;
@@ -430,6 +432,9 @@ h1,h2{
 .companies-item__buttons{
   -ms-align-items: center;
   align-items: center;
+}
+.companies__item{
+  margin-bottom: 10px;
 }
 /* companies */
 

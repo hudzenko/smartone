@@ -23,7 +23,7 @@
               include ("functions/get_all_companies.php");
               while ($row = mysql_fetch_assoc($result)) {
             ?>
-              <div class="list-group-item">
+              <div class="list-group-item companies__item">
                 <div class="row fw">
                   <div class="col-md-9">
                     <h4 class="list-group-item-heading"><?php echo $row["name"] ?></h4>

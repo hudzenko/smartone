@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-<div class="page register">
+<div class="page page--full register">
 	<div class="register__wrap fw">
 		<div class="register__content">
 			<h1 class="register__title">Реєстрація</h1>

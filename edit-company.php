@@ -18,7 +18,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="events-edit__header fw">
-            <h2 class="sub-header">Редагувати контакт</h2>
+            <h2 class="sub-header">Редагувати організацію</h2>
             <div class="events-edit__back-btn-wrap fw">
               <a href="company.php?id=<?php echo $current_company ?>" class="btn btn-default">Назад</a>  
             </div>

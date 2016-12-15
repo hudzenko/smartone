@@ -20,7 +20,7 @@
           <div class="one-company__header fw">
             <h2 class="sub-header">Деталі організації</h2>
             <div class="one-company__back-btn-wrap fw">
-              <a href="edit-company.php?id=<?php echo $current_company; ?>" class="btn one-company__edit-btn btn-info">Редагувати організацію</a>  	
+              <a href="edit-company.php?id=<?php echo $current_company; ?>" class="btn one-company__edit-btn btn-primary">Редагувати організацію</a>  	
               <a href="companies.php" class="btn btn-default">Назад</a>  
             </div>
           </div>
