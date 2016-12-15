@@ -41,8 +41,8 @@
                   <h4 class="list-group-item-heading contacts-item__name"><?php echo $row["fullname"] ?></h4>
                   <p class="list-group-item-text contacts-item__num"><?php echo $row["telephone"] ?></p>
                 <div class="fw contacts-item__buttons">
-                  <a href="contact.php?id=<?php echo $row['id']; ?>"  class="btn btn-sm btn-primary">Детальніше</a>
-                  <a href="#" data-id="<?php echo $row['id'] ?>" class="btn btn-sm btn-danger contacts-item__delete">Видалити</a>
+                  <a href="contact.php?id=<?php echo $row['id']; ?>"  class="btn btn-primary">Детальніше</a>
+                  <a href="#" data-id="<?php echo $row['id'] ?>" class="btn btn-danger contacts-item__delete">Видалити</a>
                 </div>
               </div>
             <?php } 

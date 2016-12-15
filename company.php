@@ -25,19 +25,36 @@
             </div>
           </div>
           <?php include ("functions/get_current_company.php"); ?>
-          Назва: <?php echo $item_row['name'] ?>
-          <br>
-          Адреса: <?php echo $item_row['address'] ?>
-          <br>
-          Керівник: <a href="contact.php?id=<?php echo $item_row['chief'] ?>"><?php echo $item_row['chief_name'] ?></a>
-          <br>
-          Телефон: <?php echo $item_row['telephone'] ?>
-          <br>
-          E-mail: <?php echo $item_row['email'] ?>
-          <br>
+          <div class="company__info">
+            <?php if($item_row['name']) : ?>
+            <div class="company__info-item">
+              <strong>Назва:</strong> <?php echo $item_row['name'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['address']) : ?>
+            <div class="company__info-item">
+              <strong>Адреса:</strong> <?php echo $item_row['address'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['chief']) : ?>
+            <div class="company__info-item">
+              <strong>Керівник:</strong> <a href="contact.php?id=<?php echo $item_row['chief'] ?>"><?php echo $item_row['chief_name'] ?></a>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['telephone']) : ?>
+            <div class="company__info-item">
+              <strong>Телефон:</strong> <?php echo $item_row['telephone'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['email']) : ?>
+            <div class="company__info-item">
+              <strong>E-mail:</strong> <?php echo $item_row['email'] ?>
+            </div>
+            <?php endif; ?>
+          </div>
           <div class="one-company__members">
           <h2>Члени організації</h2>
-            <ul>
+            <ol>
               <?php
               include ("functions/get_company_members.php");
               while ($row = mysql_fetch_assoc($query)) {
@@ -46,7 +63,7 @@
               <?php } 
               mysql_free_result($query);
               ?>
-            </ul>
+            </ol>
           </div>
         </div>
       </div>

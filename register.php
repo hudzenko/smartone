@@ -17,6 +17,10 @@
 				</p>
 			</form>
 		</div>
-	</div> 
+	</div>
+	<div class="home__sign-wrap">
+		<div class="home__sign">© EV_Hudzenko</div>
+		<div class="home__sign-rights">All rights reserved</div>
+	 </div> 
 </div>
 <?php include 'footer.php'; ?>

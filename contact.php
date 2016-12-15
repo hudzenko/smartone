@@ -20,21 +20,38 @@
           <div class="one-contact__header fw">
             <h2 class="sub-header">Деталі контакту</h2>
             <div class="one-contact__back-btn-wrap fw">
-              <a href="edit-contact.php?id=<?php echo $current_contact ?>" class="btn one-contact__edit-btn btn-info">Редагувати контакт</a>  	
+              <a href="edit-contact.php?id=<?php echo $current_contact ?>" class="btn one-contact__edit-btn btn-primary">Редагувати контакт</a>  	
               <a href="contacts.php" class="btn btn-default">Назад</a>  
             </div>
           </div>
           <?php include ("functions/get_current_contact.php"); ?>
-          Назва: <?php echo $item_row['fullname'] ?>
-          <br>
-          Номер: <?php echo $item_row['telephone'] ?>
-          <br>
-          E-mail: <?php echo $item_row['email'] ?>
-          <br>
-          Дата народження: <?php echo $item_row['birthday'] ?>
-          <br>
-          Компанія <a href="company.php?id=<?php echo $item_row['company']; ?>"><?php echo $item_row['company_name'] ?></a>
-          <br>
+          <div class="contact__info">
+            <?php if($item_row['fullname']) : ?>
+            <div class="contact__info-item">
+              <strong>Ім’я:</strong> <?php echo $item_row['fullname'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['telephone']) : ?>
+            <div class="contact__info-item">
+              <strong>Номер:</strong> <?php echo $item_row['telephone'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['email']) : ?>
+            <div class="contact__info-item">
+              <strong>E-mail:</strong> <?php echo $item_row['email'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['birthday']) : ?>
+            <div class="contact__info-item">
+              <strong>Дата народження:</strong> <?php echo $item_row['birthday'] ?>
+            </div>
+            <?php endif; ?>
+            <?php if($item_row['company']) : ?>
+            <div class="contact__info-item">
+              <strong>Компанія:</strong> <a href="company.php?id=<?php echo $item_row['company']; ?>"><?php echo $item_row['company_name'] ?></a>
+            </div>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
     </div>

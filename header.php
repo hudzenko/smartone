@@ -8,6 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title>Smartone</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Ubuntu:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
   <link rel="stylesheet" href="css/swiper.min.css">
@@ -28,7 +29,7 @@
 			<?php if (empty($_SESSION['login']) or empty($_SESSION['id'])): ?>
 				<form class="navbar-form navbar-right login__form" role="form">
 					<div class="form-group">
-					  <input required name="login" type="text" size="15" maxlength="15" type="text" placeholder="Ваш логин" class="form-control">
+					  <input required name="login" type="text" size="15" maxlength="15" type="text" placeholder="Ваш логін" class="form-control">
 					</div>
 					<div class="form-group">
 					  <input required name="password" type="password" size="15" maxlength="15" placeholder="Ваш пароль" class="form-control">

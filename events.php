@@ -63,7 +63,7 @@
                     <p class="list-group-item-text"><?php echo $row["description"] ?></p>
 
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 event-time__wrap">
                     <div class="event__item-time event-time fw">
                       <div class="event-time__date">
                         <?php echo $item_date->format('Y-m-d'); ?>
@@ -75,8 +75,8 @@
                   </div>
                   <div class="col-md-3">
                     <div class="fw event-item__buttons">
-                      <a href="event_edit.php?id=<?php echo $row['id']; ?>"  class="btn btn-sm events-item__edit-btn btn-primary">Редагувати</a>
-                      <a href="#" data-id="<?php echo $row['id'] ?>" class="btn btn-sm btn-danger event-item__delete">Видалити</a>
+                      <a href="event_edit.php?id=<?php echo $row['id']; ?>"  class="btn events-item__edit-btn btn-primary">Редагувати</a>
+                      <a href="#" data-id="<?php echo $row['id'] ?>" class="btn btn-danger event-item__delete">Видалити</a>
                     </div>
                   </div>
                 </div> 

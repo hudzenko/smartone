@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">Головна</h2>
-          <h3>Найближчі події</h3>
+          <h3 class="main__subheader">Найближчі події</h3>
           <div class="list-group remind-list"> 
             <?php
               include ("functions/bd.php");
@@ -35,7 +35,7 @@
 
                   </div>
                   <div class="col-md-6">
-                    <div class="event__item-time event-time fw">
+                    <div class="event__item-time event-time event-time--special fw">
                       <div class="event-time__date">
                         <?php echo $item_date->format('Y-m-d'); ?>
                       </div>
